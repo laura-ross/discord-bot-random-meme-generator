@@ -1,0 +1,17 @@
+{
+  "name": "random-meme-generator",
+  "version": "1.0.0",
+  "description": "Generates random Memes using the commmand !rm. Also generates random puppy images using the command !rp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Laura Ross",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "nodemon": "^2.0.4",
+    "random-puppy": "^1.1.0",
+    "snekfetch": "^4.0.4"
+  }
+}
