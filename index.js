@@ -30,9 +30,9 @@ client.on("message", message => {
     randomPuppy().then(url => {
       const randomPuppy = new MessageAttachment(url);
       message.channel.send(randomPuppy);
-    }).catch(err => {
+    }).catch((err) => {
       console.log(err)
-  }
+  })
 });
 
 // random meme command
@@ -42,9 +42,9 @@ client.on("message", message => {
     randomPuppy(subreddits[i]).then(url => {
       const randomMeme = new MessageAttachment(url);
       message.channel.send(randomMeme);
-    }).catch(err => {
+    }).catch((err) => {
       console.log(err)
-  }
+  })
 })
 
 client.login(token);
