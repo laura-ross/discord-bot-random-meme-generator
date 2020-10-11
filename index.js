@@ -30,7 +30,8 @@ client.on("message", message => {
     randomPuppy().then(url => {
       const randomPuppy = new MessageAttachment(url);
       message.channel.send(randomPuppy);
-    })
+    }).catch(err => {
+      console.log(err)
   }
 });
 
@@ -41,8 +42,8 @@ client.on("message", message => {
     randomPuppy(subreddits[i]).then(url => {
       const randomMeme = new MessageAttachment(url);
       message.channel.send(randomMeme);
-      console.log(i)
-    })
+    }).catch(err => {
+      console.log(err)
   }
 })
 
