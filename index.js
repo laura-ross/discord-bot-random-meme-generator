@@ -3,7 +3,7 @@ const { Client, MessageAttachment, MessageEmbed } = require("discord.js");
 const client = new Client();
 const { token, prefix } = require("./config.js");
 const randomPuppy = require('random-puppy');
-
+require('dotenv').config();
 // The randomPuppy npm package generates random memes when you pass in a subreddit as an argument. If there is no argument, it generates a photo of a random puppy.
 
 const subreddits = [
@@ -30,6 +30,8 @@ client.on("message", message => {
     randomPuppy().then(url => {
       const randomPuppy = new MessageAttachment(url);
       message.channel.send(randomPuppy);
+    }).catch((err) => {
+      console.log(err)
     })
   }
 });
@@ -41,9 +43,13 @@ client.on("message", message => {
     randomPuppy(subreddits[i]).then(url => {
       const randomMeme = new MessageAttachment(url);
       message.channel.send(randomMeme);
-      console.log(i)
-    })
+    }).catch((err) => {
+      console.log(err)
+    }).then(() => {
+    console.log('Do this, no matter what happened before');
+});
   }
 })
 
-client.login(token);
+
+client.login(process.env.TOKEN);
