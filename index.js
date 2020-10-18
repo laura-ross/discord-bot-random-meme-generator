@@ -24,6 +24,7 @@ client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}`)
 });
 
+
 // random puppy command
 client.on("message", message => {
   if(message.content === `${prefix}rp`) {
@@ -32,7 +33,7 @@ client.on("message", message => {
       message.channel.send(randomPuppy);
     }).catch((err) => {
       console.log(err)
-    })
+    });
   }
 });
 
@@ -45,11 +46,9 @@ client.on("message", message => {
       message.channel.send(randomMeme);
     }).catch((err) => {
       console.log(err)
-    }).then(() => {
-    console.log('Do this, no matter what happened before');
-});
+    });
   }
-})
+});
 
 
 client.login(process.env.TOKEN);
